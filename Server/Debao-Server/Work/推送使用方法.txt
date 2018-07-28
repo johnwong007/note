@@ -1,0 +1,37 @@
+    def pushMsg(self, user_id, content, content_type, is_need_uname = 0):
+        '''
+            通用推送接口
+        '''
+        if isinstance(content, str):
+            msg_type = 2
+        elif isinstance(content, dict):
+            msg_type = 1
+        else:
+            logging.error('pushMsg error msg_type!!!!!!!!!!')
+            return False
+        
+        msg = {}
+        msg[P.HEAD] = {P.COMMAND_ID:P.DISPOSABLE_BOARDCAST}
+        msg[P.BODY] = {
+                        P.BOARDCAST_CONTENT     :content,
+                        P.BOARDCAST_MSG_SIMBOL  :msg_type,
+                        P.BOARDCAST_CONTENT_TYPE:content_type,
+                        P.BOARDCAST_RECVER      :str(user_id),
+                        P.NEED_UID_TO_NAME      : str( is_need_uname )
+                        }
+        #logging.info('pushMsg to uid:%s content:%s' % (user_id, msg) )
+        return RbtMessage.send( ("PUSH", "PUSH01"), JsonUtil.write( msg ) )
+
+F:\server_debao\TaskDataCenter\lib\Service.py:
+
+
+[LUA-print] - "推送消息====================" = {
+[LUA-print] -     "message" = {
+[LUA-print] -         "key" = "1:771580:20180528"
+[LUA-print] -     }
+[LUA-print] -     "receivers" = "771580"
+[LUA-print] -     "simbol"    = 1
+[LUA-print] -     "type"      = 71
+[LUA-print] - }
+
+

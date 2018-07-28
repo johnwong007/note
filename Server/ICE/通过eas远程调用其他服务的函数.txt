@@ -1,0 +1,9 @@
+from Eas import EasClient
+eas_instance_account = EasClient.EasClient().getInstance('account')
+
+                #调用账务积分派送接口
+                #eas_instance_account = EasClient.EasClient().getInstance('account')
+                params = { 'orderid':str(orderid),        'userid':str(userid),    'username':str(username), 
+                           'transmoney':str(transmoney),  'channel':str(channel),  'content':str(content), 
+                           'admin':str(admin),            'adminnote':''}
+eas_instance_account.invoke('texasAcct/depositPoint',params)
