@@ -1,0 +1,15 @@
+github源码地址
+https://github.com/9miao/Firefly
+https://github.com/Wangjun-Jaelyn/Firefly
+官方教程
+http://www.9miao.com/thread-44292-1-1.html
+安装方法
+http://www.9miao.com/forum.php?mod=viewthread&tid=43786
+简单http教程
+http://www.9miao.com/forum.php?mod=viewthread&tid=44042&fromuid=87
+
+twisted入门教程
+http://wiki.jikexueyuan.com/project/twisted-intro/p16.html
+
+
+
