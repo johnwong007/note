@@ -1,0 +1,13 @@
+#!/bin/sh
+git config --global diff.tool bc4
+git config --global difftool.prompt false
+git config --global difftool.bc4.cmd '"/usr/local/bin/bcomp" "$LOCAL" "$REMOTE"'
+
+git config --global merge.tool bc4
+git config --global mergetool.prompt false
+git config --global mergetool.bc4.cmd '"/usr/local/bin/bcomp" "$LOCAL" "$REMOTE" "$BASE" "$MERGED"'
+git config --global mergetool.bc4.trustexitcode true
+
+将以上内容保成为setgitconfig文件，赋可执行权限：chmod +x setgitconfig
+执行前运行：git config –list 查看可用配置 
+执行后再运行一次，对比下看有没有生效，或者直接在一git项目中运行git difftool
